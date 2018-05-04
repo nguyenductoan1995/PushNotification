@@ -13,6 +13,8 @@
 		23484019209CC3020043F44C /* PushNotification.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23484017209CC3020043F44C /* PushNotification.xcdatamodeld */; };
 		2348401B209CC3040043F44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2348401A209CC3040043F44C /* Assets.xcassets */; };
 		2348401E209CC3040043F44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2348401C209CC3040043F44C /* LaunchScreen.storyboard */; };
+		23484026209CCEEB0043F44C /* big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23484025209CCEEB0043F44C /* big.jpg */; };
+		23484028209CCEF10043F44C /* hel.png in Resources */ = {isa = PBXBuildFile; fileRef = 23484027209CCEF00043F44C /* hel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2348401A209CC3040043F44C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2348401D209CC3040043F44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2348401F209CC3040043F44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23484025209CCEEB0043F44C /* big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big.jpg; sourceTree = "<group>"; };
+		23484027209CCEF00043F44C /* hel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 			children = (
 				2348400F209CC3020043F44C /* PushNotification */,
 				2348400E209CC3020043F44C /* Products */,
+				23484025209CCEEB0043F44C /* big.jpg */,
+				23484027209CCEF00043F44C /* hel.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23484028209CCEF10043F44C /* hel.png in Resources */,
+				23484026209CCEEB0043F44C /* big.jpg in Resources */,
 				2348401E209CC3040043F44C /* LaunchScreen.storyboard in Resources */,
 				2348401B209CC3040043F44C /* Assets.xcassets in Resources */,
 				23484016209CC3020043F44C /* Main.storyboard in Resources */,
@@ -287,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MHY5H7DURP;
 				INFOPLIST_FILE = PushNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MHY5H7DURP;
 				INFOPLIST_FILE = PushNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

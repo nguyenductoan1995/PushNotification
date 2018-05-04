@@ -9,10 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBAction func datePicker(_ sender: Any) {
+        
+    }
+    
+    @IBAction func push(_ sender: Any) {
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        delegate?.pushNotifications(inSeconds: 5){
+            (succes) in
+            if succes {
+                print("done")
+            }
+            else{
+                print("failed")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

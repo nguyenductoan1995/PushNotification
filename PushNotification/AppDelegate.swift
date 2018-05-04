@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert , .badge , .sound ]){
+            (succes,error) in
+            if error != nil {
+                print ("Failed")
+            }
+            else{
+                print("done")
+            }
+        }
         return true
     }
 
@@ -44,6 +54,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    //Push notificatiom
+    
+    func pushNotifications(inSeconds: TimeInterval, completion : @escaping (_ Success : Bool)-> ()){
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Tiêu đề"
+        content.subtitle = "Title"
+        content.body = "my body of Notification"
+        content.sound = UNNotificationSound.default()
+        if let path = Bundle.main.path(forResource: "big", ofType: "jpg") {
+           let url = URL(fileURLWithPath: path)
+            do {
+                let attachment = try UNNotificationAttachment(identifier: "big", url: url, options: nil)
+                content.attachments = [attachment]
+            } catch {
+                print("Failed to load The attachment.")
+            }
+        }
+        
+        let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request){
+            (error) in
+            if error != nil {
+                completion(false)
+            }
+            else{
+                completion(true)
+            }
+        }
+    }
+    
+    // Push notification end
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
